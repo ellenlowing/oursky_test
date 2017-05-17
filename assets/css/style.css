@@ -42,7 +42,7 @@ body .enter-task #text{
   border: 0px solid;
 }
 
-body .enter-task .button{
+body .enter-task #addButton{
   width: 56px;
   height: 56px;
 }
