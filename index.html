@@ -1,13 +1,52 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<title>Task Timer</title>
+
 </head>
 <body>
-	<form action="/" method= "post">
-		<input type = "text" id = "text">
-		<input type = "submit" id = "submit">
-	</form>
-	<hr>
+	<div class = "header">
+
+		<h1 id = "title"><img id = "title-image" src="./images/Group 2.png">T A S K  T I M E R</h1>
+	</div>
+	<div class = "container">
+		<div class = "enter-task">
+			<form action="/" method= "post">
+				<input type = "text" id = "text" placeholder = "Enter task name">
+				<input type = "image" src = "./images/Group 3.png" class = "button" alt = "Submit">
+			</form>
+
+		</div>
+		<div class = "tasks">
+			<ul>
+				<li>
+					<div class = "task">
+						<p>
+							<div class = "task-name">
+								Cleaning desk 
+							</div>
+							<div class = "task-right">
+								<a href="/" onclick = "pause()"><img id = "task-pause" src="./images/Group 5.png"></a>
+								<a href="/" onclick = "done()"><img id = "task-done" src="./images/Group 4.png"></a>
+							</div>
+							
+						</p>
+
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class = "footer">
+			This is a simple tool to track tasks that last for how long, be efficient!
+		</div>
+	</div>
+	<script type="text/javascript" src = "assets/js/app.js"></script>
 </body>
 </html>
