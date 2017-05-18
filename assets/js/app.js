@@ -1,7 +1,21 @@
+var checkChildNodes = function(listItemsNum){
+	var ul = document.getElementById("tasks");
+	var container = ul.parentNode;
+	if(listItemsNum!==0){
+		
+		console.log(ul.childNodes);
+		container.setAttribute("style", "background-color: #FFFFFF");
+	}
+}
+
+
 var addButton = document.getElementById("addButton");
 var listItemsNum = 0;
 
+
+
 addButton.addEventListener("click", function(){
+	checkChildNodes();
 	listItemsNum++;
 	var tasks = document.getElementById('tasks');
 	var text = document.getElementById('text');

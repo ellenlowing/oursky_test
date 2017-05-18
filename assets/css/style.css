@@ -30,11 +30,8 @@ body .header #title-image{
 body .container{
   width: 100%;
   height: 80%;
-  background-color: #FFFFFF;
-  width: 75%;
+  background-color: #6CADFF;
   position:relative;
-  left: 50%;
-  margin-left: -37.5%;
 }
 
 body .enter-task{
@@ -58,6 +55,10 @@ body .enter-task #addButton{
 
 body ul {
   list-style: none;
+  width: 75%;
+  position: relative;
+  left: 50%;
+  margin-left: -37.5%;
 
 }
 
