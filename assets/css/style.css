@@ -11,12 +11,15 @@ body .header{
   text-align: center;
   top: 0px;
   left: 0px;
-  padding-top: 10%;
-  padding-bottom: 10%;
 }
 
 body .header #title{
   text-align: center;
+  height: 100%;
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
 
 }
 body .header #title-image{
@@ -34,6 +37,10 @@ body .enter-task{
   text-align: center;
   margin-top: 25px;
   margin-bottom: 75px;
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
 }
 
 body .enter-task #text{
@@ -99,9 +106,13 @@ body .footer{
 }
 
 body .footer p{
+  text-align: center;
   padding-left: 20%;
   padding-right: 20%;
-  position: absolute;
   bottom: 0;
   padding-bottom: 1%;
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
 }
