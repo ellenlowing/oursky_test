@@ -1,9 +1,11 @@
 var checkChildNodes = function(listItemsNum){
 	var ul = document.getElementById("tasks");
 	var container = ul.parentNode;
+	var text = document.getElementById("text");
 	if(listItemsNum!==0){
-		console.log(ul.childNodes);
+		text.className = "addedTask";
 		container.setAttribute("style", "background-color: #FFFFFF");
+		text.setAttribute("style", "background-color: #FFFFFF; color: #d9d9d9");
 	}
 }
 
@@ -14,8 +16,8 @@ var listItemsNum = 0;
 
 
 addButton.addEventListener("click", function(){
-	checkChildNodes();
 	listItemsNum++;
+	checkChildNodes();
 	var tasks = document.getElementById('tasks');
 	var text = document.getElementById('text');
 	var taskName = text.value;
@@ -54,7 +56,7 @@ addButton.addEventListener("click", function(){
 	if(listItemsNum == 1){
 		tasks.appendChild(li);
 	}else{
-		tasks.insertBefore(li, tasks.childNodes[1]);
+		tasks.insertBefore(li, tasks.childNodes[0]);
 	}
 	
 });
