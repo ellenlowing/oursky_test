@@ -1,27 +1,65 @@
+var checkChildNodes = function(listItemsNum){
+	var ul = document.getElementById("tasks");
+	var container = ul.parentNode;
+	var text = document.getElementById("text");
+	if(listItemsNum!==0){
+		text.className = "addedTask";
+		container.setAttribute("style", "background-color: #FFFFFF");
+		text.setAttribute("style", "background-color: #FFFFFF; color: #d9d9d9");
+	}
+}
+
+
 var addButton = document.getElementById("addButton");
-var text = document.getElementById('text');
+var listItemsNum = 0;
+
+
+
 addButton.addEventListener("click", function(){
-
-		var tasks = document.getElementById('tasks');
-		var taskName = text.value;
-		text.value = "";
-		var li = document.createElement("li");
-		li.setAttribute("class", "task");
-		var p = document.createElement("p");
-		var start = 0;
-		var seconds = setInterval(function(){
-			start += 1;
-			
-		}, 1000);
-		p.innerHTML = "<div class = \"task-name\">" + taskName + 
-							"</div><div class = \"task-right\"><a href=\"#\"><img id = \"task-pause\" src=\"./images/Group 5.png\"></a><a href=\"#\"><img id = \"task-done\" src=\"./images/Group 4.png\"></a></div> " + start + " seconds";
-		
-
-		li.appendChild(p);
+	listItemsNum++;
+	checkChildNodes();
+	var tasks = document.getElementById('tasks');
+	var text = document.getElementById('text');
+	var taskName = text.value;
+	text.value = "";
+	var li = document.createElement("li");
+	li.setAttribute("class", "task");
+	var p = document.createElement("p");
+	var taskNameDiv = document.createElement("div");
+	taskNameDiv.textContent = taskName;
+	taskNameDiv.setAttribute("class","task-name");
+	var taskButtonDiv = document.createElement("div");
+	taskButtonDiv.setAttribute("class", "task-right");
+	var taskPauseButton = document.createElement("a");
+	taskPauseButton.setAttribute("href", "#");
+	var taskPauseImg = document.createElement("img");
+	taskPauseImg.setAttribute("id","task-pause");
+	taskPauseImg.setAttribute("src", "./images/Group 5.png");
+	taskPauseButton.appendChild(taskPauseImg);
+	taskButtonDiv.appendChild(taskPauseButton);
+	var taskDoneButton = document.createElement("a");
+	taskDoneButton.setAttribute("href", "#");
+	var taskDoneImg = document.createElement("img");
+	taskDoneImg.setAttribute("id","task-done"+"-"+listItemsNum);
+	taskDoneImg.setAttribute("src", "./images/Group 4.png");
+	taskDoneImg.addEventListener("click",function(){
+		var li = this.parentNode.parentNode.parentNode.parentNode;
+		li.setAttribute("style", "background-color: #f8f8f8; color:#d9d9d9;");
+		var p = this.parentNode.parentNode.parentNode;
+		p.removeChild(p.lastChild);
+	});
+	taskDoneButton.appendChild(taskDoneImg);
+	taskButtonDiv.appendChild(taskDoneButton);
+	p.appendChild(taskNameDiv);
+	p.appendChild(taskButtonDiv);
+	li.appendChild(p);
+	if(listItemsNum == 1){
 		tasks.appendChild(li);
+	}else{
+		tasks.insertBefore(li, tasks.childNodes[0]);
+	}
+	
 });
-
-
 
 
 var clicked = false;

@@ -1,5 +1,6 @@
 body{
   font-family: 'Open Sans', sans-serif;
+  position: relative;
 }
 
 body .header{
@@ -10,12 +11,15 @@ body .header{
   text-align: center;
   top: 0px;
   left: 0px;
-  padding-top: 10%;
-  padding-bottom: 10%;
 }
 
 body .header #title{
   text-align: center;
+  height: 100%;
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
 
 }
 body .header #title-image{
@@ -26,20 +30,63 @@ body .header #title-image{
 body .container{
   width: 100%;
   height: 80%;
-  background-color: #FFFFFF;
+  background-color: #6CADFF;
+  position:relative;
 }
 
 body .enter-task{
   text-align: center;
   margin-top: 25px;
   margin-bottom: 75px;
+  
 }
 
 body .enter-task #text{
   font-family: 'Open Sans';
   font-size: 24px;
-  color: #D9D9D9;
+  background-color: #6CADFF;
+  color: #FFFFFF;
   border: 0px solid;
+}
+
+#text::-webkit-input-placeholder
+{
+  color:    #FFFFFF;
+}
+
+#text:-moz-placeholder
+{
+  color:    #FFFFFF;
+}
+
+#text::-moz-placeholder
+{
+  color:    #FFFFFF;
+}
+
+#text:-ms-input-placeholder
+{
+  color:    #FFFFFF;
+}
+
+#text.addedTask::-webkit-input-placeholder
+{
+  color:    #d9d9d9;
+}
+
+#text.addedTask:-moz-placeholder
+{
+  color:    #d9d9d9;
+}
+
+#text.addedTask::-moz-placeholder
+{
+  color:    #d9d9d9;
+}
+
+#text.addedTask:-ms-input-placeholder
+{
+  color:    #d9d9d9;
 }
 
 body .enter-task #addButton{
@@ -49,6 +96,11 @@ body .enter-task #addButton{
 
 body ul {
   list-style: none;
+  width: 75%;
+  position: relative;
+  left: 50%;
+  margin-left: -37.5%;
+
 }
 
 body #tasks .task{
@@ -89,11 +141,19 @@ body #tasks ul li .task .task-done{
   width: 56px;
 }
 
+
 body .footer{
-  text-align: center;
   font-family: 'Open Sans';
   font-size: 16px;
   color: #D9D9D9;
   width: 298px;
   height: 44px;
+  width: 75%;
+  position: relative;
+  left: 50%;
+  margin-left: -37.5%;
+  bottom: 0;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
+
